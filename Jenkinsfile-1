@@ -13,7 +13,8 @@ pipeline {
         sh 'ls -lart' 
         sh 'npm install --cache npm_cache'
         sh 'npm audit fix --force'
-        sh 'Tar czf cvcrator-$BUILD_NUMBER.tar.gz node_modules main.js package.json index.js public'
+        sh 'apk add --no-cache tar'
+        sh 'tar czf cvcrator-$BUILD_NUMBER.tar.gz node_modules main.js package.json index.js public'
       }
     }
   }
