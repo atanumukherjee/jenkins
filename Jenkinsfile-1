@@ -22,7 +22,7 @@ pipeline {
   }
   post { 
         always { 
-            sh 'Tar czf cvcrator-$BUILD_NUMBER.tar.gz node_modules main.js package.json index.js public' 
+            archiveArtifacts artifacts: 'cvcrator-*.tar.gz', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             cleanWs()
         }
     }
