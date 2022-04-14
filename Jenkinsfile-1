@@ -6,6 +6,9 @@ pipeline {
     stage('Test') {
       steps {
         sh 'node --version'
+        sh 'npm -v' 
+        sh 'ls -lart' 
+        sh 'npm install --cache npm_cache'
       }
     }
   }
