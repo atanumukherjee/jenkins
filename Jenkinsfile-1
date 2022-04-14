@@ -9,6 +9,7 @@ pipeline {
         sh 'npm -v' 
         sh 'ls -lart' 
         sh 'npm install --cache npm_cache'
+        sh 'npm audit fix --force'
       }
     }
   }
