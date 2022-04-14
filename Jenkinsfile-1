@@ -16,7 +16,7 @@ pipeline {
         sh 'npm install --cache npm_cache'
         sh 'npm audit fix --force'
         sh 'apk add --no-cache tar'
-        sh 'tar czf cvcrator-$BUILD_NUMBER.tar.gz node_modules main.js package.json index.js public'
+        sh 'tar czf cvcrator-$BUILD_NUMBER.tar.gz node_modules app.js package.json index.js public'
       }
     }
   }
